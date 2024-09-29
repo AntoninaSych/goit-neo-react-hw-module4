@@ -1,5 +1,4 @@
-import ImageCard from '../ImageCard/ImageCard';
-import styles from './ImageGallery.module.css'; // Импорт стилей
+import styles from './ImageGallery.module.css';
 
 export default function ImageGallery({ images, onImageClick }) {
     return (
@@ -8,9 +7,9 @@ export default function ImageGallery({ images, onImageClick }) {
                 <div
                     className={styles.imageCard}
                     key={image.id}
-                    onClick={() => onImageClick(image)} // Обработка клика на изображение
+                    onClick={() => onImageClick(image)}
                 >
-                    <ImageCard image={image} />
+                    <img src={image.urls.small} alt={image.alt_description} />
                 </div>
             ))}
         </div>
