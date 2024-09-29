@@ -1,0 +1,30 @@
+/* Галерея с фиксированной шириной и высотой для изображений */
+.galleryContainer {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Каждый элемент минимальной ширины 200px */
+    gap: 15px; /* Отступы между изображениями */
+    justify-items: center;
+}
+
+/* Обертка для карточки изображения */
+.imageCard {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Сохранение соотношения сторон 1:1 для квадратных изображений */
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.imageCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка обрезается под размер блока, сохраняя центр */
+    transition: transform 0.3s ease;
+}
+
+.imageCard:hover img {
+    transform: scale(1.05); /* Увеличение изображения при наведении */
+}
