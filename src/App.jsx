@@ -39,7 +39,7 @@ export default function App() {
             );
 
             if (response.data.results.length === 0) {
-                toast.error('Not found'); // Показать тост, если изображения не найдены
+                toast.error('Not found');
             }
 
             if (newPage === 1) {
