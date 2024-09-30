@@ -1,12 +1,12 @@
-/* Container that centers the search bar horizontally */
+/* Контейнер для поиска */
 .searchContainer {
-    background-color: #3f51b5; /* Blue background */
+    background-color: #3f51b5; /* Синий фон */
     padding: 20px;
     display: flex;
     justify-content: center;
 }
 
-/* Styling the search form */
+/* Стили формы поиска */
 .searchForm {
     display: flex;
     gap: 10px;
@@ -14,7 +14,7 @@
     width: 100%;
 }
 
-/* Search input styling */
+/* Поле ввода */
 .searchInput {
     padding: 10px;
     flex: 1;
@@ -23,18 +23,18 @@
     font-size: 16px;
 }
 
-/* Search button styling */
+/* Кнопка поиска */
 .searchButton {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #ffffff; /* White button */
-    color: #3f51b5; /* Blue text to match the theme */
+    background-color: #ffffff;
+    color: #3f51b5;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .searchButton:hover {
-    background-color: #f1f1f1; /* Slightly gray background on hover */
+    background-color: #f1f1f1;
 }

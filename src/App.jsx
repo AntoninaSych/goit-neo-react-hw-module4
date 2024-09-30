@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Toaster } from 'react-hot-toast';
 import SearchBar from './components/SearchBar/SearchBar';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import Loader from './components/Loader/Loader';
@@ -14,9 +15,9 @@ export default function App() {
     const [error, setError] = useState(null);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const [selectedImage, setSelectedImage] = useState(null); // Для модального окна
+    const [selectedImage, setSelectedImage] = useState(null);
 
-    const ACCESS_KEY = 'Nc-c9u0iy2teHWrlIEPu4AGvr35pFDYcXSrK55Fhmxc'; // Ваш Access Key
+    const ACCESS_KEY = 'Nc-c9u0iy2teHWrlIEPu4AGvr35pFDYcXSrK55Fhmxc';
 
     const fetchImages = async (newQuery, newPage = 1) => {
         setLoading(true);
@@ -38,9 +39,9 @@ export default function App() {
             );
 
             if (newPage === 1) {
-                setImages(response.data.results); // Сбрасываем изображения при новом запросе
+                setImages(response.data.results);
             } else {
-                setImages((prevImages) => [...prevImages, ...response.data.results]); // Добавляем новые изображения к предыдущим
+                setImages((prevImages) => [...prevImages, ...response.data.results]);
             }
             setTotalPages(response.data.total_pages);
         } catch (err) {
@@ -53,7 +54,7 @@ export default function App() {
     const handleSearch = (newQuery) => {
         setQuery(newQuery);
         setPage(1);
-        fetchImages(newQuery, 1); // Сбрасываем страницу и запрашиваем новые изображения
+        fetchImages(newQuery, 1);
     };
 
     const loadMore = () => {
@@ -65,19 +66,20 @@ export default function App() {
     };
 
     const handleImageClick = (image) => {
-        setSelectedImage(image); // Устанавливаем выбранное изображение для модального окна
+        setSelectedImage(image);
     };
 
     const handleCloseModal = () => {
-        setSelectedImage(null); // Закрываем модальное окно
+        setSelectedImage(null);
     };
 
     return (
         <div>
+            <Toaster position="top-right" reverseOrder={false} />
             <SearchBar onSubmit={handleSearch} />
             {error && <ErrorMessage message={error} />}
             {images.length > 0 && (
-                <ImageGallery images={images} onImageClick={handleImageClick} /> // Передаем обработчик клика на изображение
+                <ImageGallery images={images} onImageClick={handleImageClick} />
             )}
             {loading && <Loader />}
             {images.length > 0 && !loading && page < totalPages && (
