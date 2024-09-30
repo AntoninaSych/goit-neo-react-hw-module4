@@ -1,4 +1,5 @@
 import styles from './ImageGallery.module.css';
+import ImageCard from '../ImageCard/ImageCard';
 
 export default function ImageGallery({ images, onImageClick }) {
     return (
@@ -7,9 +8,8 @@ export default function ImageGallery({ images, onImageClick }) {
                 <li
                     className={styles.imageCard}
                     key={image.id}
-                    onClick={() => onImageClick(image)}
                 >
-                    <img src={image.urls.small} alt={image.alt_description} />
+                    <ImageCard image={image} onClick={onImageClick} />
                 </li>
             ))}
         </ul>

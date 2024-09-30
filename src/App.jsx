@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Toaster } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 import SearchBar from './components/SearchBar/SearchBar';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import Loader from './components/Loader/Loader';
@@ -37,6 +37,10 @@ export default function App() {
                     },
                 }
             );
+
+            if (response.data.results.length === 0) {
+                toast.error('Not found'); // Показать тост, если изображения не найдены
+            }
 
             if (newPage === 1) {
                 setImages(response.data.results);
@@ -79,7 +83,7 @@ export default function App() {
             <SearchBar onSubmit={handleSearch} />
             {error && <ErrorMessage message={error} />}
             {images.length > 0 && (
-                <ImageGallery class="galleryContainer" images={images} onImageClick={handleImageClick} />
+                <ImageGallery images={images} onImageClick={handleImageClick} />
             )}
             {loading && <Loader />}
             {images.length > 0 && !loading && page < totalPages && (

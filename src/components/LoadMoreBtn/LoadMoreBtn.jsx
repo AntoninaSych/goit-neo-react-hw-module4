@@ -2,9 +2,9 @@ import styles from './LoadMoreBtn.module.css';
 
 export default function LoadMoreBtn({ onClick }) {
     return (
-        <div className={styles.loadMoreContainer}>
-            <button type="button" onClick={onClick} className={styles.loadMoreButton}>
-                Load more
+        <div className={styles.loadMoreButtonContainer}>
+            <button className={styles.loadMoreButton} onClick={onClick}>
+                Load More
             </button>
         </div>
     );

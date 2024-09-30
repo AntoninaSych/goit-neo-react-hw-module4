@@ -1,7 +1,7 @@
-.loadMoreContainer {
+.loadMoreButtonContainer {
     display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    justify-content: center; /* Центрируем кнопку по горизонтали */
+    margin-top: 20px;
 }
 
 .loadMoreButton {
@@ -9,12 +9,28 @@
     background-color: #3f51b5;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .loadMoreButton:hover {
     background-color: #303f9f;
+    animation: pulse 1.5s infinite;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
