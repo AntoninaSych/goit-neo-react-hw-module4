@@ -79,7 +79,7 @@ export default function App() {
             <SearchBar onSubmit={handleSearch} />
             {error && <ErrorMessage message={error} />}
             {images.length > 0 && (
-                <ImageGallery images={images} onImageClick={handleImageClick} />
+                <ImageGallery class="galleryContainer" images={images} onImageClick={handleImageClick} />
             )}
             {loading && <Loader />}
             {images.length > 0 && !loading && page < totalPages && (

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export default function ImageModal({ isOpen, onClose, image }) {
     useEffect(() => {
-        ReactModal.setAppElement('#root'); // Для обеспечения доступности
+        ReactModal.setAppElement('#root');
     }, []);
 
     if (!image) return null;
@@ -24,13 +24,13 @@ export default function ImageModal({ isOpen, onClose, image }) {
                     maxWidth: '600px',
                 },
                 overlay: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.75)', // Полупрозрачный фон
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
                 },
             }}
         >
             <img src={image.urls.regular} alt={image.alt_description} style={{ width: '100%', borderRadius: '8px' }} />
             <button onClick={onClose} style={{ marginTop: '10px', padding: '10px 20px', background: '#3f51b5', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-                Закрыть
+                Close
             </button>
         </ReactModal>
     );

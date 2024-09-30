@@ -1,18 +1,15 @@
-/* Стили для контейнера галереи */
 .galleryContainer {
-    padding: 20px;
+    margin: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Отображение в виде сетки */
-    gap: 15px; /* Отступы между изображениями */
-    list-style-type: none; /* Убираем маркеры у элементов списка */
-    margin: 0;
-    padding: 0;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    list-style-type: none;
 }
 
-/* Стили для каждого изображения */
+
 .imageCard {
     width: 100%;
-    height: 200px; /* Фиксированная высота для изображений */
+    height: 200px;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
@@ -22,10 +19,10 @@
 .imageCard img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Картинка подгоняется под размер блока */
+    object-fit: cover;
     border-radius: 8px;
 }
 
 .imageCard:hover img {
-    transform: scale(1.05); /* Эффект увеличения при наведении */
+    transform: scale(1.05);
 }

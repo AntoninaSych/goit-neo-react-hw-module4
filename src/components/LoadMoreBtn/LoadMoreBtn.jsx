@@ -1,4 +1,4 @@
-import styles from './LoadMoreBtn.module.css'; // Import the styles
+import styles from './LoadMoreBtn.module.css';
 
 export default function LoadMoreBtn({ onClick }) {
     return (

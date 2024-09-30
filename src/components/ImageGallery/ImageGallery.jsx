@@ -7,7 +7,7 @@ export default function ImageGallery({ images, onImageClick }) {
                 <li
                     className={styles.imageCard}
                     key={image.id}
-                    onClick={() => onImageClick(image)} // Навешиваем обработчик клика
+                    onClick={() => onImageClick(image)}
                 >
                     <img src={image.urls.small} alt={image.alt_description} />
                 </li>
